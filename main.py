@@ -22,8 +22,8 @@ validationRatio = 0.2
 imageDimensions = (32, 32, 3)
 
 batchSizeVal=50
-epochsVal=1
-stepsPerEpoch=100
+epochsVal=10
+stepsPerEpoch=200
 #############################
 
 count = 0
@@ -167,14 +167,14 @@ score=model.evaluate(x_test,y_test,verbose=0)
 print('Test Score = ',score[0])
 print('Test Accuracy = ',score[1])
 
-pickle_out=open("model_trained.p",'wb')
-# pickle.dump(model,pickle_out)
-# pickle_out.close()
+pickle_out=open("A/model_trained.p",'wb')
+pickle.dump(model,pickle_out)
+pickle_out.close()
 
-
-print(x_train.shape)
-
-print(x_train[30].shape)
+#
+# print(x_train.shape)
+#
+# print(x_train[30].shape)
 
 # img = preProcessing(x_train[30])
 # img = cv2.resize(img, (300, 300))
